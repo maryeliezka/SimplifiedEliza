@@ -35,8 +35,7 @@ public class eliza{
 	/* -end init- */
 
 	/* Print welcome message */
-	System.out.println("The doctor is in.");
-	System.out.println("What's on your mind?");
+	System.out.println("Selamat Datang.");
 	/* -end printing- */
 
 	/* Run a loop for I/O */ 
@@ -46,8 +45,7 @@ public class eliza{
 	    if (currentline.findInLine("bye")==null)
 		System.out.println(respond(currentline));//print a response
 	    else {//Exit program if 'bye' was typed
-		System.out.println("Alright then, goodbye!"+
-				   " \n**[Akshat Singhal's mini-Eliza].**");
+		System.out.println("Ok, sampai jumpa lagi");				   
 		endloop=true;
 	    }
 	}/* -end I/O loop- */
@@ -63,82 +61,79 @@ public class eliza{
 
 	/* Init a HashMap of keyword-response pairs */
 	HashMap<String,String[]> responses = new HashMap<String,String[]>();
-	String[] temp0={"What does that suggest to you?",
-			"I see.",
-			"I'm not sure I understand you fully.",
-			"Can you elaborate?",
-			"That is quite interesting."			
+	String[] temp0={"Jadi apa yang ingin anda sampaikan?",
+			"Saya mengerti.",
+			"Saya tidak yakin bahwa saya mengerti apa yang anda katakan",
+			"Bisa diperjelas lagi?",
+			"Menarik sekali"			
 	};
 	responses.put("NOTFOUND", temp0);
 
-	String[] temp1={"Can you think of a specific example?"};    
-	responses.put("always", temp1);
+	String[] temp1={"Bisa diperjelas lagi?"};    
+	responses.put("selalu", temp1);
 
-	String[] temp2={"Is that the real reason?"};
-	responses.put("because", temp2);
+	String[] temp2={"Benarkah itu alasannya?"};
+	responses.put("karena", temp2);
 
-	String[] temp3={"Please don't apologize."};
-	responses.put("sorry", temp3);
+	String[] temp3={"Oh tidak apa-apa kok."};
+	responses.put("maaf", temp3);
 
-	String[] temp4={"You don't seem very certain."};
-	responses.put("maybe", temp4);
+	String[] temp4={"Kelihatannya anda tidak yakin..."};
+	responses.put("mungkin", temp4);
 
-	String[] temp5={"Do you really think so?"};
-	responses.put("i think", temp5);
+	String[] temp5={"Benarkah anda berpikir demikian?"};
+	responses.put("saya merasa", temp5);
+        responses.put("aku merasa", temp5); 
 
-	String[] temp6={"We were discussing you, not me."};
-	responses.put("you", temp6);
+	String[] temp6={"Kita sedangkan mendiskusikan diri anda, bukan diri saya."};
+	responses.put("kamu", temp6);
+        responses.put("anda", temp6);
 
-	String[] temp7={"Why do you think so?",
-			"You seem quite positive."};
-	responses.put("yes", temp7);
+	String[] temp7={"Anda terlihat yakin sekali."};
+	responses.put("ya", temp7);
 
-	String[] temp8={"Why not?",
-			"Are you sure?"};
-	responses.put("no", temp8);
+	String[] temp8={"Kenapa tidak?",
+			"Anda yakin"};
+	responses.put("tidak", temp8);
 
-	String[] temp9={"I am sorry to hear you are *.",
-			"How long have you been *?",
-			"Do you believe it is normal to be *?",
-			"Do you enjoy being *?"
+	String[] temp9={"Berapa lama anda telah merasa *?",
+			"Apakah anda percaya bahwa itu normal untuk *?"
 	};
-	responses.put("i am", temp9);
-	responses.put("i'm", temp9);
+	responses.put("saya", temp9);
+	responses.put("aku", temp9);
 
-	String[] temp10={"Tell me more about such feelings.",
-			 "Do you often feel *?",
-			 "Do you enjoy feeling *?",
-			 "Why do you feel that way?"
+	String[] temp10={"Ceritakan lebih banyak mengenai hal yang anda rasakan",
+			 "Apakah anda sering merasa *?",
+			 "Apakah anda menikmati perasaan *?",
+			 "Mengapa anda merasakan hal seperti itu?"
 	};
-	responses.put("i feel", temp10);
+	responses.put("saya merasa", temp10);
 
-	String[] temp11={"Tell me more about your family.",
-			 "How do you get along with your family?",
-			 "Is your family important to you?"
+	String[] temp11={"Ceritakan lebih banyak tentang keluarga anda.",
+			 "Seberapa dekatkah anda dengan keluarga?",
+			 "Apakah keluarga penting bagi anda?"
 	};
-	responses.put("family", temp11);
-	responses.put("mother", temp11);
-	responses.put("father", temp11);
-	responses.put("mom", temp11);
-	responses.put("dad", temp11);
-	responses.put("sister", temp11);
-	responses.put("brother", temp11);
-	responses.put("husband", temp11);
-	responses.put("wife", temp11);
+	responses.put("keluarga", temp11);
+	responses.put("ibu", temp11);
+	responses.put("ayah", temp11);
+	responses.put("mama", temp11);
+	responses.put("papa", temp11);
+	responses.put("adik", temp11);
+	responses.put("kakak", temp11);
+	responses.put("istri", temp11);
+	responses.put("suami", temp11);
 
-	String[] temp12={"What does that dream suggest to you?",
-			 "Do you dream often?",
-			 "What persons appear in your dreams?",
-			 "Are you disturbed by your dreams?"		 
+	String[] temp12={"Apakah anda sering memimpikan hal tersebut?",
+			 "Siapakah orang yang anda temui di mimpi anda?",
+			 "Apakah anda merasa terganggu dengan mimpi anda?"		 
 	};
-	responses.put("dream", temp12);
-	responses.put("nightmare", temp12);
+	responses.put("mimpi", temp12);
        	
 		      
-	String[] keywords={"always","because","sorry","maybe","i think",
-			   "you","yes","no","i am","i'm","i feel","family",
-			   "mother","mom","dad","father","sister",
-			   "brother","husband","wife","dream","nightmare"};
+	String[] keywords={"selalu","karena","maaf","mungkin","saya pikir",
+                            "ku pikir","kamu","ya","tidak","saya","aku","saya merasa","aku merasa","keluarga",
+			   "kamu","anda","ibu","mama","papa","ayah","kakak",
+			   "adik","suami","istri","mimpi"};
 	/* -end hashmap init- */
 	
 	/* initialize variables */
