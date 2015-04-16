@@ -35,7 +35,7 @@ public class eliza{
 	/* -end init- */
 
 	/* Print welcome message */
-	System.out.println("Selamat Datang.");
+	System.out.println("Selamat Datang...");
 	/* -end printing- */
 
 	/* Run a loop for I/O */ 
@@ -69,7 +69,7 @@ public class eliza{
 	};
 	responses.put("NOTFOUND", temp0);
 
-	String[] temp1={"Bisa diperjelas lagi?"};    
+	String[] temp1={"Bisakah anda memberi contoh yang lebih spesifik?"};    
 	responses.put("selalu", temp1);
 
 	String[] temp2={"Benarkah itu alasannya?"};
@@ -82,20 +82,22 @@ public class eliza{
 	responses.put("mungkin", temp4);
 
 	String[] temp5={"Benarkah anda berpikir demikian?"};
-	responses.put("saya merasa", temp5);
-        responses.put("aku merasa", temp5); 
+	responses.put("saya pikir", temp5);
+        responses.put("kupikir", temp5); 
 
 	String[] temp6={"Kita sedangkan mendiskusikan diri anda, bukan diri saya."};
 	responses.put("kamu", temp6);
         responses.put("anda", temp6);
 
 	String[] temp7={"Anda terlihat yakin sekali."};
-	responses.put("ya", temp7);
+	responses.put("saya yakin", temp7);
+        responses.put("aku yakin", temp7);
 
 	String[] temp8={"Kenapa tidak?",
-			"Anda yakin"};
-	responses.put("tidak", temp8);
-
+			"Anda yakin?"};
+	responses.put("saya tidak", temp8);
+        responses.put("aku tidak", temp8);
+        
 	String[] temp9={"Berapa lama anda telah merasa *?",
 			"Apakah anda percaya bahwa itu normal untuk *?"
 	};
@@ -131,7 +133,8 @@ public class eliza{
        	
 		      
 	String[] keywords={"selalu","karena","maaf","mungkin","saya pikir",
-                            "ku pikir","kamu","ya","tidak","saya","aku","saya merasa","aku merasa","keluarga",
+                            "kupikir","kamu","saya yakin","aku yakin","saya tidak",
+                            "aku tidak","saya","aku","saya merasa","aku merasa","keluarga",
 			   "kamu","anda","ibu","mama","papa","ayah","kakak",
 			   "adik","suami","istri","mimpi"};
 	/* -end hashmap init- */
